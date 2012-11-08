@@ -1,0 +1,13 @@
+body {
+	margin-bottom: 60px;
+	margin-top: -25px;
+}
+
+.hero-unit {
+	background: #333333;
+	color: #ffffff;
+}
+
+.icon-red {
+	color: #FF2E00;
+}
