@@ -7,18 +7,28 @@ With Upscuits you have a nice overview of the uptime of your servers, and a page
 I've tried to depend on frameworks as much as possible, and I think I did pretty well...
 
 
+Tools needed:
+---------------
+* Apache webserver (but it could work on IIS with some modifications)
+* A free account at [UptimeRobot](http://uptimerobot.com)
+* A oven or text-editor
+
+
 Preparations:
 ---------------
 _You can skip step 1 and 2 if you've already got a monitor at Uptime Robot_
 
-1. Create a free account at [UptimeRobot](http://uptimerobot.com)
+1. Login at UptimeRobot.
 2. Add a new monitor
 3. Go to [MySettings](http://www.uptimerobot.com/mySettings.asp) and create/write down the API key for the monitor.
+4. Put the following in the `directive` tag in you `httpd.conf` and restart apache:
+
+	`AllowOverride FileInfo Options`
 
 
-Method:
+Directions:
 ---------------
-1. Clone or copy the files to your server
+1. Clone or copy the files to your webserver/ shared hosting
 2. Copy `js/config.example.js` to `js/config.js`
 3. Paste one ore more API keys as an array in `config.js`
 
