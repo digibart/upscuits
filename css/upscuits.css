@@ -1,8 +1,9 @@
 body {
-	margin-bottom: 60px;
-	margin-top: -25px;
+	margin: -25px 100px 100px 100px;
 }
-
+.container {
+	width: 900px;
+}
 .hero-unit {
 	background: #333333;
 	color: #ffffff;
