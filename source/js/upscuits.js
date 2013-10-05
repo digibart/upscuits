@@ -5,12 +5,11 @@
 
 	--
 
-	@file		app.js
-	@version	1.0.0
-	@date		2012-08-26 13:59:31 +0200 (Sun, 26 Aug 2012)
+	@file		upsuits.js
+	@date		@@timestamp
 	@author		Pixel Bakkerij
 
-	Copyright (c) 2012 Pixel Bakkerij <http://pixelbakkerij.nl>
+	Copyright (c) 2013 Pixel Bakkerij <http://pixelbakkerij.nl>
 
 */
 window.myApp = window.myApp || {};
