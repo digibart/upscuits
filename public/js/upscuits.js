@@ -16,7 +16,7 @@
 	--
 
 	@file		upsuits.js
-	@date		Sat Oct 05 2013 14:25:28
+	@date		Sat Oct 05 2013 17:58:47
 	@author		Pixel Bakkerij
 
 	Copyright (c) 2013 Pixel Bakkerij <http://pixelbakkerij.nl>
@@ -29,6 +29,7 @@ myApp.dashboard = (function($) {
 		_loaded = 0,
 		_intervalId = 0,
 		_start = Date.now(),
+		_refresh = ((typeof(__refresh) == "number") ? __refresh : 300),
 		$_container = {},
 		$_prograss = {},
 		$_countdown = {},
@@ -42,13 +43,18 @@ myApp.dashboard = (function($) {
 		$_countdown = $('.countdown');
 		$_lastUpdate = $('#last-update');
 
-		for (var i in __apiKeys) {
-			getUptime(__apiKeys[i]);
+		if (typeof(__apiKeys) == "undefined" || __apiKeys.length < 1) {
+			$_container.append($(Mustache.render($('#no-monitors-template').html())));
 		}
+		else {
+			for (var i in __apiKeys) {
+				getUptime(__apiKeys[i]);
+			}
 
-		attachListners($('html'));
+			attachListners($('html'));
 
-		_intervalId = setInterval(countdown, 1000);
+			_intervalId = setInterval(countdown, 1000);
+		}
 	}
 
 	function attachListners($target) {
@@ -80,24 +86,29 @@ myApp.dashboard = (function($) {
 		switch (parseInt(data.status, 10)) {
 			case 0:
 				data.statustxt = "Up-Time paused";
-				data.label = "inverse";
+				data.statusicon = "icon-pause";
+				data.label = "info";
 				break;
 			case 1:
 				data.statustxt = "Not checked yet";
+				data.statusicon = "icon-question";
 				data.label = "default";
 				break;
 			case 2:
 				data.statustxt = "Online";
+				data.statusicon = "icon-ok";
 				data.label = "success";
 				data.alert = "";
 				break;
 			case 8:
 				data.statustxt = "Seems offline";
+				data.statusicon = "icon-remove";
 				data.label = "warning";
 				break;
 			case 9:
 				data.statustxt = "Offline";
-				data.label = "important";
+				data.statusicon = "icon-bolt";
+				data.label = "danger";
 				data.alert = "alert alert-error";
 				break;
 		}
@@ -185,15 +196,15 @@ myApp.dashboard = (function($) {
 	function countdown() {
 		var now = Date.now(),
 			elapsed = parseInt((now - _start) / 1000, 10),
-			mins = Math.floor((__refresh - elapsed) / 60),
-			secs = __refresh - (mins * 60) - elapsed;
+			mins = Math.floor((_refresh - elapsed) / 60),
+			secs = _refresh - (mins * 60) - elapsed;
 
 		secs = (secs < 10) ? "0" + secs : secs;
 
-		$_countdown.width(100 - (elapsed * (100 / __refresh)) + '%');
+		$_countdown.width(100 - (elapsed * (100 / _refresh)) + '%');
 		$_lastUpdate.html(mins + ':' + secs);
 
-		if (elapsed > __refresh) {
+		if (elapsed > _refresh) {
 			clearInterval(_intervalId);
 			init();
 		}
@@ -219,13 +230,13 @@ myApp.dashboard = (function($) {
 	function getLogType() {
 		switch (parseInt(this.type, 10)) {
 			case 1:
-				return "important";
+				return "danger";
 			case 2:
 				return "success";
 			case 99:
 				return "info";
 			case 98:
-				return "inverse";
+				return "default";
 			default:
 				return this.type;
 		}
@@ -242,6 +253,6 @@ jQuery(document).ready(myApp.dashboard.init);
 /* function called from the uptimerequest */
 function jsonUptimeRobotApi(data) {
 	for (var i in data.monitors.monitor) {
-		myApp.dashboard.placeServer(data.monitors.monitor[i]);
+			myApp.dashboard.placeServer(data.monitors.monitor[i]);
+		}
 	}
-}
