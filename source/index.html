@@ -11,7 +11,7 @@
 
 <body>
 	<div class="container">
-		<div class="hero-unit">
+		<div class="jumbotron">
 			<h1><i class="icon-dashboard icon-red"></i> Upscuits <small>short for uptime-biscuit</small></h1>
 
 			<p>
@@ -20,31 +20,51 @@
 		</div>
 		
 		<!-- progress bar of loaded servers -->
-		<div class="progress progress-striped active">
-			<div class="loading bar" style="width: 0;"></div>
+		<div class="progress">
+			<div class="progress-bar progress-bar-info loading bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+				<span class="sr-only"></span>
+			</div>
 		</div>
 
 		<div id="server-container"></div>
 
 		<!-- count down timer + progress bar -->
-		<div class="span1">
+		<div class="col-md-2">
 			<i class="icon-refresh"></i> <span id="last-update"></span>
 		</div>
-		<div class="progress progress-small progress-countdown">
-			<div class="bar bar-info countdown" style="width: 0%;"></div>
+		<div class="progress">
+			<div class="progress-bar progress-bar-info countdown" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+				<span class="sr-only"></span>
+			</div>
 		</div>
 
 		<!-- modal windows-->
-		<div id="modal-about" class="modal hide fade">
+		<div class="modal fade" id="modal-about">
+			<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">What does this page mean?</h4>
+					</div>
+					<div class="modal-body">
+						<p>At this page you can see the status of different servers/ apps.</p>
+						<p>Each gauge shows the uptime of last day, week, month, year and all time. (These calculations are not very accurate...)</p>
+						<p>Click on the <i class="icon-time"></i>-icon to see the log of last month. Or open the monitored page by clicking on <i class="icon-link"></i></p>
+						<p>The page automatically refreshes</p>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-primary" data-dismiss="modal">close</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal hide fade">
 			<div class="modal-header">
 				<a href="#" class="close" data-dismiss="modal">×</a>
 				<h3>What does this page mean?</h3>
 			</div>
 			<div class="modal-body">
-				<p>At this page you can see the status of different servers/ apps.</p>
-				<p>Each gauge shows the uptime of last day, week, month, year and all time. (These calculations are not very accurate...)</p>
-				<p>Click on the <i class="icon-time"></i>-icon to see the log of last month. Or open the monitored page by clicking on <i class="icon-link"></i></p>
-				<p>The page automatically refreshes</p>
 			</div>
 			<div class="modal-footer">
 				<a href="#" class="btn primary" data-dismiss="modal">close</a>
@@ -53,18 +73,17 @@
 
 		<!-- navigation bar -->
 		<div class="navbar navbar-inverse navbar-fixed-bottom">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="brand" href="#"><i class="icon-dashboard icon-red"></i> Upscuits</a>
-					<div class="nav-collapse collapse">
-						<ul class="nav">
-							<li><a href="#" data-toggle="modal" data-target="#modal-about"><i class="icon-info-sign"></i>About</a></li>
-							<li><a href="http://twitter.com/pixelbak" target="_blank"><i class="icon-twitter"></i> Pixelbak</a></li>
-							<li><a href="https://github.com/digibart/upscuits" target="_blank"><i class="icon-github"></i> Github</a></li>
-							<li><small class="navbar-text">Created by</small></li>
-							<li><a href="http://pixelbakkerij.nl" target="_blank"><i class="icon-wrench"></i> Pixelbakkerij</a></li>
-						</ul>
-					</div>
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"><i class="icon-dashboard icon-red"></i> Upscuits</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#" data-toggle="modal" data-target="#modal-about"><i class="icon-info-sign"></i> About</a></li>
+						<li><a href="http://twitter.com/pixelbak" target="_blank"><i class="icon-twitter"></i> Pixelbak</a></li>
+						<li><a href="https://github.com/digibart/upscuits" target="_blank"><i class="icon-code-fork"></i> Fork me</a></li>
+						<li><div class="navbar-text">Created by <a href="http://pixelbakkerij.nl" target="_blank" class="navbar-link"><i class="icon-user"></i> PixelBakkerij</a></div></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -74,27 +93,28 @@
 	<script type="template/mustache" id="server-template">
 		<div class="well {{alert}}">
 			<div class="row">
-				<div class="span4">
+				<div class="col-md-4">
 					<h2>
 						{{friendlyname}}
-						<small><span class="label label-{{label}}">{{statustxt}}</span></small>
+						<span class="label label-status label-{{label}}"><i class="{{statusicon}}"></i></span>
 					</h2>
 	
-	
-					<a href="javascript:void(0)" class="btn btn-small log tip" title="Log of last month"><i class="icon-time"></i></a>
-					<a href="{{url}}" target="_blank" class="btn btn-small tip" title="Open monitored page"><i class="icon-link"></i></a>
+					<div class="btn-group">
+						<a href="javascript:void(0)" class="btn btn-default btn-sm log tip" title="Log of last month"><i class="icon-time"></i></a>
+						<a href="{{url}}" target="_blank" class="btn btn-default btn-sm tip" title="Open monitored page"><i class="icon-link"></i></a>
+					</div>
 					<div class="log{{id}} hide">
-						<ul class="unstyled">
+						<ul class="list-unstyled">
 							{{#log}}
 								<li>
-									<span class="badge badge-{{labeltype}}"><i class="icon-{{typeicon}} icon-white"></i></span>
+									<span class="btn btn-xs btn-{{labeltype}}"><i class="icon-{{typeicon}} icon-white"></i></span>
 									&nbsp;{{datetime}}
 								</li>
 							{{/log}}
 						</ul>
 					</div>
 				</div>
-				<div class="span7">
+				<div class="col-md-7">
 					<span id="chart_{{id}}"></span>
 				</div>
 			</div>

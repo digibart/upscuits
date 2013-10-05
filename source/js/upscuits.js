@@ -86,24 +86,29 @@ myApp.dashboard = (function($) {
 		switch (parseInt(data.status, 10)) {
 			case 0:
 				data.statustxt = "Up-Time paused";
-				data.label = "inverse";
+				data.statusicon = "icon-pause";
+				data.label = "info";
 				break;
 			case 1:
 				data.statustxt = "Not checked yet";
+				data.statusicon = "icon-question";
 				data.label = "default";
 				break;
 			case 2:
 				data.statustxt = "Online";
+				data.statusicon = "icon-ok";
 				data.label = "success";
 				data.alert = "";
 				break;
 			case 8:
 				data.statustxt = "Seems offline";
+				data.statusicon = "icon-remove";
 				data.label = "warning";
 				break;
 			case 9:
 				data.statustxt = "Offline";
-				data.label = "important";
+				data.statusicon = "icon-bolt";
+				data.label = "danger";
 				data.alert = "alert alert-error";
 				break;
 		}
@@ -225,13 +230,13 @@ myApp.dashboard = (function($) {
 	function getLogType() {
 		switch (parseInt(this.type, 10)) {
 			case 1:
-				return "important";
+				return "danger";
 			case 2:
 				return "success";
 			case 99:
 				return "info";
 			case 98:
-				return "inverse";
+				return "default";
 			default:
 				return this.type;
 		}
@@ -248,6 +253,6 @@ jQuery(document).ready(myApp.dashboard.init);
 /* function called from the uptimerequest */
 function jsonUptimeRobotApi(data) {
 	for (var i in data.monitors.monitor) {
-		myApp.dashboard.placeServer(data.monitors.monitor[i]);
+			myApp.dashboard.placeServer(data.monitors.monitor[i]);
+		}
 	}
-}
