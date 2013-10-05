@@ -61,6 +61,7 @@ Ingredients:
 	* [{{Mustaches}}](https://github.com/janl/mustache.js/) (1/3 lbs)
 
 
-This work is licensed under a [Creative Commons Attribution-Share Alike 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/).
-![License](http://i.creativecommons.org/l/by-sa/3.0/nl/88x31.png "Licence")
+License:
+---------------
+This work is licensed under [GPL-v3 license](https://github.com/digibart/upscuits/blob/master/license.md)
 
