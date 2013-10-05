@@ -27,13 +27,13 @@ module.exports = function (grunt) {
 			},
 			vendors: {
 				src: ['./source/js/libs/jquery.min.js', './source/js/libs/bootstrap-tooltip.js', './source/js/libs/bootstrap-popover.js', './source/js/libs/bootstrap-modal.js', './source/js/libs/mustache.js', './source/js/libs/date.js'],
-				dest: './build/js/vendors.js'
+				dest: './public/js/vendors.js'
 			},
 		},
 		uglify: {
 			production: {
 				files: {
-					'./build/js/vendors.min.js': ['./build/js/vendors.js']
+					'./public/js/vendors.min.js': ['./public/js/vendors.js']
 				}
 			}
 		},
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
 					expand: true,
 					flatten: true,
 					src: ['./source/js/upscuits.js'],
-					dest: './build/js/'
+					dest: './public/js/'
 				}]
 			},
 			version: {
@@ -63,7 +63,7 @@ module.exports = function (grunt) {
 					expand: true,
 					flatten: true,
 					src: ['./source/index.html'],
-					dest: './build/'
+					dest: './public/'
 				}]
 			}
 		},
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
 					yuicompress: false
 				},
 				files: {
-					"./build/css/upscuits.css": "./source/less/upscuits.less"
+					'./public/css/upscuits.css': './source/less/upscuits.less'
 				}
 			},
 			production: {
@@ -81,7 +81,7 @@ module.exports = function (grunt) {
 					yuicompress: true
 				},
 				files: {
-					"./build/css/upscuits.min.css": "./source/less/upscuits.less"
+					'./public/css/upscuits.min.css': './source/less/upscuits.less'
 				}
 			}
 		},
