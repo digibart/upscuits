@@ -84,7 +84,17 @@ module.exports = function (grunt) {
 					"./build/css/upscuits.min.css": "./source/less/upscuits.less"
 				}
 			}
-		}
+		},
+		watch: {
+			js: {
+				files: ['./source/js/upscuits.js'],
+				tasks: ['replace:date']
+			},
+			less: {
+				files: ['./source/less/*.less'],
+				tasks: ['less']
+			}
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -92,6 +102,8 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-replace');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+
 
 	// Default task(s).
 	grunt.registerTask('default', ['js', 'less']);
