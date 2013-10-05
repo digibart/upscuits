@@ -67,7 +67,7 @@ myApp.dashboard = (function($) {
 	/* places the html on the page */
 	function placeServer(data) {
 		data.alert = "alert";
-		switch (parseInt(data.status)) {
+		switch (parseInt(data.status, 10)) {
 			case 0:
 				data.statustxt = "Up-Time paused";
 				data.label = "inverse";
@@ -174,7 +174,7 @@ myApp.dashboard = (function($) {
 	/* count down till next refresh */
 	function countdown() {
 		var now = Date.now(),
-			elapsed = parseInt((now - _start) / 1000),
+			elapsed = parseInt((now - _start) / 1000, 10),
 			mins = Math.floor((__refresh - elapsed) / 60),
 			secs = __refresh - (mins * 60) - elapsed;
 
@@ -191,19 +191,15 @@ myApp.dashboard = (function($) {
 
 	/* set the icon in front of every log-line */
 	function getLogIcon() {
-		switch (parseInt(this.type)) {
+		switch (parseInt(this.type, 10)) {
 			case 1:
 				return "chevron-down";
-				break;
 			case 2:
 				return "chevron-up";
-				break;
 			case 99:
 				return "pause";
-				break;
 			case 98:
 				return "play";
-				break;
 			default:
 				return this.type;
 		}
@@ -211,19 +207,15 @@ myApp.dashboard = (function($) {
 
 	/* give the icon in front of log line a nice color */
 	function getLogType() {
-		switch (parseInt(this.type)) {
+		switch (parseInt(this.type, 10)) {
 			case 1:
 				return "important";
-				break;
 			case 2:
 				return "success";
-				break;
 			case 99:
 				return "info";
-				break;
 			case 98:
 				return "inverse";
-				break;
 			default:
 				return this.type;
 		}
