@@ -42,13 +42,18 @@ myApp.dashboard = (function($) {
 		$_countdown = $('.countdown');
 		$_lastUpdate = $('#last-update');
 
-		for (var i in __apiKeys) {
-			getUptime(__apiKeys[i]);
+		if (typeof(__apiKeys) == "undefined" || __apiKeys.length < 1) {
+			$_container.append($(Mustache.render($('#no-monitors-template').html())));
 		}
+		else {
+			for (var i in __apiKeys) {
+				getUptime(__apiKeys[i]);
+			}
 
-		attachListners($('html'));
+			attachListners($('html'));
 
-		_intervalId = setInterval(countdown, 1000);
+			_intervalId = setInterval(countdown, 1000);
+		}
 	}
 
 	function attachListners($target) {

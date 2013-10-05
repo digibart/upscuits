@@ -87,12 +87,12 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			js: {
-				files: ['./source/js/upscuits.js'],
-				tasks: ['replace:date']
+				files: ['./source/js/upscuits.js', './source/index.html'],
+				tasks: ['replace']
 			},
 			less: {
-				files: ['./source/less/*.less'],
-				tasks: ['less']
+				files: ['./source/less/*.less', './source/index.html'],
+				tasks: ['replace', 'less']
 			}
 		},
 	});
