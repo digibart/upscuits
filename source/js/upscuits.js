@@ -29,6 +29,7 @@ myApp.dashboard = (function($) {
 		_loaded = 0,
 		_intervalId = 0,
 		_start = Date.now(),
+		_refresh = ((typeof(__refresh) == "number") ? __refresh : 300),
 		$_container = {},
 		$_prograss = {},
 		$_countdown = {},
@@ -190,15 +191,15 @@ myApp.dashboard = (function($) {
 	function countdown() {
 		var now = Date.now(),
 			elapsed = parseInt((now - _start) / 1000, 10),
-			mins = Math.floor((__refresh - elapsed) / 60),
-			secs = __refresh - (mins * 60) - elapsed;
+			mins = Math.floor((_refresh - elapsed) / 60),
+			secs = _refresh - (mins * 60) - elapsed;
 
 		secs = (secs < 10) ? "0" + secs : secs;
 
-		$_countdown.width(100 - (elapsed * (100 / __refresh)) + '%');
+		$_countdown.width(100 - (elapsed * (100 / _refresh)) + '%');
 		$_lastUpdate.html(mins + ':' + secs);
 
-		if (elapsed > __refresh) {
+		if (elapsed > _refresh) {
 			clearInterval(_intervalId);
 			init();
 		}
