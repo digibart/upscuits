@@ -10,7 +10,7 @@ I've tried to depend on frameworks as much as possible, and I think I did pretty
 Tools needed:
 ---------------
 * A webserver
-* A free account at [UptimeRobot](http://uptimerobot.com)
+* A free account at [Uptime Robot](http://uptimerobot.com)
 * A oven or text-editor
 
 
@@ -18,35 +18,35 @@ Preparations:
 ---------------
 _You can skip step 1 and 2 if you've already got a monitor at Uptime Robot_
 
-1. Login at UptimeRobot.
+1. Login at Uptime Robot.
 2. Add a new monitor
-3. Go to [MySettings](http://www.uptimerobot.com/mySettings.asp) and create/write down the API key for the monitor.
+3. Go to [MySettings](http://uptimerobot.com/dashboard.php#mySettings) ("Monitor-Specific API Keys" at bottom right) and create/write down the API key for the monitor.
 
 
 Directions:
 ---------------
-1. Clone or copy the files to your webserver/ shared hosting
-2. Copy `js/config.example.js` to `js/config.js`
+1. Clone or copy all files in `public` to your webserver/ shared hosting
+2. Copy `public/js/config.example.js` to `public/js/config.js`
 3. Paste one ore more API keys as an array in `config.js`
 
 
-Variations:
+Your own flavor:
 ---------------
+This project uses [Grunt](http://gruntjs.com/getting-started). You could edit the files in the `public` folder, but is advised to use Grunt to build the files in `public`-folder. Install Grunt with:
 
-__Use filename-based cache busting.__ Quote from [html5-boilerplate](https://github.com/h5bp/html5-boilerplate/blob/master/doc/htaccess.md#cache-busting):
+`$ npm install -g grunt-cli`
 
-> A first-time visitor to your page may have to make several HTTP requests, but by using the Expires header you make those components cacheable. This avoids unnecessary HTTP requests on subsequent page views. Expires headers are most often used with images, but they should be used on all components including scripts, stylesheets, etc.  
-> Traditionally, if you use a far future Expires header you have to change the component's filename whenever the component changes. Or else the visitors browser will show an old cached version of the resource.
+Next, install the required grunt plugins from `packages.json` by running:
 
-Upscuits `.htaccess` has built-in filename cache busting. So it will route all requests for `/path/filename.123.ext` to `/path/filename.ext`. To use this, just add a time-stamp number (or your own numbered versioning system) into your resource filenames in your HTML source whenever you update those resources. Example:
+`$ npm install`
 
-`<script src="/js/jquery.min.181.js"></script>`
- 
-__N.B. You do not have to rename the resource on the filesystem.__ All you have to do is add the timestamp number to the filename in your HTML source. The `.htaccess` directive will serve up the proper file.
+Now modify the code in the folder `source` as it pleases you. While editing you can use this to build everytime you save a file: 
 
-You do have to edit you apache conf, put the following in the `directive` tag in you `httpd.conf` or  and restart apache:
+`$ grunt watch`
 
-`AllowOverride FileInfo Options`
+To only compile the less files, use `grunt css`, or to concat javascript files use `grunt js`. To make a new release, run:
+
+`grunt`
 
 
 
