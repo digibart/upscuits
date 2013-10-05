@@ -4,7 +4,6 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
-			prod: ['Gruntfile.js', './source/js/*.js'],
 			options: {
 				// options here to override JSHint defaults
 				globals: {
@@ -19,7 +18,8 @@ module.exports = function (grunt) {
 					expr: true,
 					asi: true
 				}
-			}
+			},
+			production: ['Gruntfile.js', './source/js/*.js'],
 		},
 		concat: {
 			options: {
@@ -31,7 +31,7 @@ module.exports = function (grunt) {
 			},
 		},
 		uglify: {
-			prod: {
+			production: {
 				files: {
 					'./build/js/vendors.min.js': ['./build/js/vendors.js']
 				}
@@ -66,7 +66,24 @@ module.exports = function (grunt) {
 					dest: './build/'
 				}]
 			}
-
+		},
+		less: {
+			development: {
+				options: {
+					yuicompress: false
+				},
+				files: {
+					"./build/css/upscuits.css": "./source/less/upscuits.less"
+				}
+			},
+			production: {
+				options: {
+					yuicompress: true
+				},
+				files: {
+					"./build/css/upscuits.min.css": "./source/less/upscuits.less"
+				}
+			}
 		}
 	});
 
@@ -74,12 +91,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-replace');
-
-	if (!grunt.file.exists('./source/js.config.js')) {
-		grunt.log.warn('./source/js/config.js not found!');
-	}
+	grunt.loadNpmTasks('grunt-contrib-less');
 
 	// Default task(s).
-	grunt.registerTask('default', ['jshint', 'concat', 'replace', 'uglify']);
+	grunt.registerTask('default', ['js', 'less']);
+	grunt.registerTask('js', ['jshint', 'concat', 'replace', 'uglify']);
 
 };
