@@ -168,8 +168,8 @@ myApp.dashboard = (function($) {
 	function placeCharts($container) {
 		var options = {
 			lines: 12,
-			angle: 0.35,
-			lineWidth: 0.24,
+			angle: 0.41,
+			lineWidth: 0.2,
 			limitMax: 'false',
 			colorStart: '#4DAD48',
 			colorStop: '#4DAD48',
@@ -178,8 +178,8 @@ myApp.dashboard = (function($) {
 		};
 		$.each($container.find('.donut canvas'), function (key, el) {
 			var gauge = new Donut(el).setOptions(options),
-				uptime = $(el).attr('uptime') - 80;
-			gauge.maxValue = 20;
+				uptime = $(el).attr('uptime') - 95;
+			gauge.maxValue = 5;
 			gauge.animationSpeed = 1;
 			gauge.set(uptime);
 		});

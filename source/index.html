@@ -26,7 +26,52 @@
 			</div>
 		</div>
 
+		<!-- legenda of graphs -->
+		<div class="row">
+			<div class="col-md-8 col-md-offset-4">
+				<div class="well well-xs">
+					<div class="donut">
+						<div class="title">Last 24 hr</div>
+					</div>
+					<div class="donut">
+						<div class="title">Last 7 days</div>
+					</div>
+					<div class="donut">
+						<div class="title">Last 30 days</div>
+					</div>
+					<div class="donut">
+						<div class="title">Last year</div>
+					</div>
+					<div class="donut">
+						<div class="title">All time</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id="server-container"></div>
+
+		<!-- legenda of graphs (again) -->
+		<div class="row">
+			<div class="col-md-8 col-md-offset-4">
+				<div class="well well-xs">
+					<div class="donut">
+						<div class="title">Last 24 hr</div>
+					</div>
+					<div class="donut">
+						<div class="title">Last 7 days</div>
+					</div>
+					<div class="donut">
+						<div class="title">Last 30 days</div>
+					</div>
+					<div class="donut">
+						<div class="title">Last year</div>
+					</div>
+					<div class="donut">
+						<div class="title">All time</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- count down timer + progress bar -->
 		<div class="col-md-2">
@@ -114,15 +159,12 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-8 graphs">
 					{{#charts}}
 						<div class="donut">
 							<canvas width="90" height="90" uptime="{{uptime}}"></canvas>
 							<div class="uptime">
-								{{uptime}}
-							</div>
-							<div class="footer">
-								{{title}}
+								{{uptime}}%
 							</div>
 						</div>
 					{{/charts}}
