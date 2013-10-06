@@ -115,7 +115,17 @@
 					</div>
 				</div>
 				<div class="col-md-7">
-					<span id="chart_{{id}}"></span>
+					{{#charts}}
+						<div class="donut">
+							<canvas width="90" height="90" uptime="{{uptime}}"></canvas>
+							<div class="uptime">
+								{{uptime}}
+							</div>
+							<div class="footer">
+								{{title}}
+							</div>
+						</div>
+					{{/charts}}
 				</div>
 			</div>
 		</div>
