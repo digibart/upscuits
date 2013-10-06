@@ -168,20 +168,33 @@ myApp.dashboard = (function($) {
 	function placeCharts($container) {
 		var options = {
 			lines: 12,
-			angle: 0.41,
+			angle: 0.42,
 			lineWidth: 0.2,
 			limitMax: 'false',
 			colorStart: '#4DAD48',
 			colorStop: '#4DAD48',
 			strokeColor: '#E0E0E0',
-			generateGradient: true
+			generateGradient: false
 		};
 		$.each($container.find('.donut canvas'), function (key, el) {
-			var gauge = new Donut(el).setOptions(options),
-				uptime = $(el).attr('uptime') - 95;
-			gauge.maxValue = 5;
+			var uptime = $(el).attr('uptime');
+
+			if (uptime <= 90) {
+				options.colorStart = '#dc554c'; //red
+				uptime = 90.01; //only show a red dot
+			} else if (uptime < 95) {
+				options.colorStart = '#3c89cc'; //blue
+			} else if (uptime < 99.5) {
+				options.colorStart = '#f2af46'; //yellow
+			} else {
+				options.colorStart = '#56b958'; //green
+			}
+
+			var gauge = new Donut(el).setOptions(options);
+
+			gauge.maxValue = 10;
 			gauge.animationSpeed = 1;
-			gauge.set(uptime);
+			gauge.set(uptime - 90);
 		});
 	}
 
