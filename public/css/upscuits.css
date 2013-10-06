@@ -5814,3 +5814,26 @@ body {
 .icon-red {
   color: #FF2E00;
 }
+/* ------------------------------  */
+/* !The Donut graphs
+/* ------------------------------  */
+.well-xs {
+  padding: 0;
+}
+.donut {
+  display: inline-block;
+  margin-left: 10px;
+}
+.donut .title {
+  width: 90px;
+  text-align: center;
+}
+.donut .uptime {
+  position: absolute;
+  width: 90px;
+  text-align: center;
+}
+.donut:hover .title {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
