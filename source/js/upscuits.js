@@ -131,8 +131,22 @@ myApp.dashboard = (function($) {
 		data.typeicon = getLogIcon;
 		data.labeltype = getLogType;
 		
+		// gather data for the graphs
+		var uptimes = data.customuptimeratio.split("-");
+		uptimes.push(data.alltimeuptimeratio);
+		data.charts = [
+			{title: 'Last Day',  uptime: parseFloat(uptimes[0])},
+			{title: 'Last Week', uptime: parseFloat(uptimes[1])},
+			{title: 'Last Month',uptime: parseFloat(uptimes[2])},
+			{title: 'Last year', uptime: parseFloat(uptimes[3])},
+			{title: 'All Time',  uptime: parseFloat(uptimes[4])}
+		];
+
 		//render the sh!t
 		var $output = $(Mustache.render(_template, data));
+		
+		//initialize the graphs
+		placeCharts($output);
 
 		//attach popover listners
 		$output.find('a.log').click(function() {
@@ -147,40 +161,41 @@ myApp.dashboard = (function($) {
 		//append it in the container
 		$_container.append($output);
 
-		//load/place the graphs
-		var values = data.customuptimeratio.split("-");
-		values.push(data.alltimeuptimeratio);
-		placeCharts(values, data.id);
-
-
 		updateProgressBar();
 	}
 
 	/* place the chart */
-	function placeCharts(values, id) {
-		var data = google.visualization.arrayToDataTable([
-			['Label', 'Value'],
-			['Last Day', parseFloat(values[0])],
-			['Last Week', parseFloat(values[1])],
-			['Last Month', parseFloat(values[2])],
-			['Last year', parseFloat(values[3])],
-			['All Time', parseFloat(values[4])]
-		]),
-			options = {
-				width: 550,
-				height: 140,
-				min: 90,
-				max: 100,
-				redFrom: 90,
-				redTo: 95,
-				yellowFrom: 95,
-				yellowTo: 99,
-				greenFrom: 99,
-				greenTo: 100,
-				minorTicks: 5,
-			};  
-		var chart = new google.visualization.Gauge(document.getElementById('chart_' + id));
-		chart.draw(data, options);
+	function placeCharts($container) {
+		var options = {
+			lines: 12,
+			angle: 0.42,
+			lineWidth: 0.2,
+			limitMax: 'false',
+			colorStart: '#4DAD48',
+			colorStop: '#4DAD48',
+			strokeColor: '#E0E0E0',
+			generateGradient: false
+		};
+		$.each($container.find('.donut canvas'), function (key, el) {
+			var uptime = $(el).attr('uptime');
+
+			if (uptime <= 90) {
+				options.colorStart = '#dc554c'; //red
+				uptime = 90.01; //only show a red dot
+			} else if (uptime < 95) {
+				options.colorStart = '#3c89cc'; //blue
+			} else if (uptime < 99.5) {
+				options.colorStart = '#f2af46'; //yellow
+			} else {
+				options.colorStart = '#56b958'; //green
+			}
+
+			var gauge = new Donut(el).setOptions(options);
+
+			gauge.maxValue = 10;
+			gauge.animationSpeed = 1;
+			gauge.set(uptime - 90);
+		});
 	}
 
 	/* update progress bar of loaded servers */

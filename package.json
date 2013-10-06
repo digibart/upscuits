@@ -1,6 +1,6 @@
 {
   "name": "upscuits",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A quick overview of your server's uptime served on a nice dinner-tray.",
   "main": "index.js",
   "repository": {

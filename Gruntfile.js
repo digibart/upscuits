@@ -26,7 +26,7 @@ module.exports = function (grunt) {
 				separator: '\n;'
 			},
 			vendors: {
-				src: ['./source/js/libs/jquery.min.js', './source/js/libs/bootstrap-tooltip.js', './source/js/libs/bootstrap-popover.js', './source/js/libs/bootstrap-modal.js', './source/js/libs/mustache.js', './source/js/libs/date.js'],
+				src: ['./source/js/libs/jquery.min.js', './source/js/libs/bootstrap-tooltip.js', './source/js/libs/bootstrap-popover.js', './source/js/libs/bootstrap-modal.js', './source/js/libs/mustache.js', './source/js/libs/date.js', './source/js/libs/gauge.js'],
 				dest: './public/js/vendors.js'
 			},
 		},
