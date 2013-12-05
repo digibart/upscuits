@@ -1,4 +1,4 @@
-<?
+<?php
 if (!isset($Language)) 
 {
 	$Language = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
