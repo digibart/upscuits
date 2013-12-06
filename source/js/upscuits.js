@@ -42,9 +42,23 @@ myApp.dashboard = (function($) {
 		$_prograss = $('.loading');
 		$_countdown = $('.countdown');
 		$_lastUpdate = $('#last-update');
+		
+		$.i18n.init({
+			fallbackLng: false,
+			resGetPath: 'js/locales/__lng__-__ns__.json' 
+		}, function(t) {
+			$('[data-i18n]').i18n();
+		});
+
+		
 
 		if (typeof(__apiKeys) == "undefined" || __apiKeys.length < 1) {
-			$_container.append($(Mustache.render($('#no-monitors-template').html())));
+			var $output = $(Mustache.render($('#no-monitors-template').html()));
+
+			//translate
+			$output.find('[data-i18n]').i18n();
+
+			$_container.append($output);
 		}
 		else {
 			for (var i in __apiKeys) {
@@ -147,6 +161,9 @@ myApp.dashboard = (function($) {
 		
 		//initialize the graphs
 		placeCharts($output);
+
+		//translate
+		$output.find('[data-i18n]').i18n();
 
 		//attach popover listners
 		$output.find('a.log').click(function() {
