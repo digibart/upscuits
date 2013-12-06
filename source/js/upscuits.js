@@ -42,9 +42,11 @@ myApp.dashboard = (function($) {
 		$_prograss = $('.loading');
 		$_countdown = $('.countdown');
 		$_lastUpdate = $('#last-update');
-		
+	
+		//translation	
 		$.i18n.init({
 			fallbackLng: false,
+			detectLngQS: 'lang',
 			resGetPath: 'js/locales/__lng__-__ns__.json' 
 		}, function(t) {
 			$('[data-i18n]').i18n();
