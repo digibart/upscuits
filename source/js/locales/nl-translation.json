@@ -24,7 +24,7 @@
 		"content": [
 			"<p>Op deze pagina kun je overzicht zien van de status van verschillende servers</p>",
 			"<p>Elke schijf toont de uptime van laatste dag, week, maand, jaar, en sinds begin. (Berekeningen zijn niet heel accuraat)</p>",
-			"<p>Click op het <i class='icon-time'></i>-icoon om de log van laatste maand te bekijken. Of open de gemonitoorde pagina door op <i class='icon-link'></i>-icoon te klikken.</p>",
+			"<p>Klik op het <i class='icon-time'></i>-icoon om de log van laatste maand te bekijken. Of open de gemonitoorde pagina door op <i class='icon-link'></i>-icoon te klikken.</p>",
 			"<p>De pagina wordt automatisch iedere 5 minuten vernieuwd.</p>"
 		]
 	},
