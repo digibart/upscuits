@@ -44,15 +44,16 @@ myApp.dashboard = (function($) {
 		$_lastUpdate = $('#last-update');
 	
 		//translation	
-		$.i18n.init({
-			fallbackLng: false,
-			detectLngQS: 'lang',
-			resGetPath: 'js/locales/__lng__-__ns__.json' 
-		}, function(t) {
-			$('[data-i18n]').i18n();
-		});
-
-		
+		if (__language !== false) {
+			$.i18n.init({
+				lng: __language,
+				fallbackLng: false,
+				detectLngQS: 'lang',
+				resGetPath: 'js/locales/__lng__-__ns__.json' 
+			}, function(t) {
+				$('[data-i18n]').i18n();
+			});
+		}
 
 		if (typeof(__apiKeys) == "undefined" || __apiKeys.length < 1) {
 			var $output = $(Mustache.render($('#no-monitors-template').html()));

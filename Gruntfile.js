@@ -88,7 +88,7 @@ module.exports = function (grunt) {
 		watch: {
 			js: {
 				files: ['./source/js/upscuits.js', './source/js/locales/*.json', './source/index.html'],
-				tasks: ['replace', 'copy']
+				tasks: ['replace', 'jshint', 'copy']
 			},
 			less: {
 				files: ['./source/less/*.less', './source/index.html'],
