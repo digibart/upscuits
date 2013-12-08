@@ -4,12 +4,10 @@ _Short for crispy uptime-biscuits_
 
 With Upscuits you have a nice overview of the uptime of your servers, and a page to share with your customers.
 
-I've tried to depend on frameworks as much as possible, and I think I did pretty well...
-
 
 Tools needed:
 ---------------
-* A webserver
+* A webserver capable of serving static files
 * A free account at [Uptime Robot](http://uptimerobot.com)
 * A oven or text-editor
 
@@ -55,8 +53,9 @@ Ingredients:
 * Cake:
 	* [Bootstrap](http://twitter.github.com/bootstrap/) (2 lbs)
 	* [UptimeRobot](http://www.uptimerobot.com) (6 oz.)
+    * [i18n](i18next.com) (1 cup per language)
 * Topping:
-	* [Google Charts](https://developers.google.com/chart) (4 cups/server)
+	* [Gauge.js](http://bernii.github.io/gauge.js/) (4 cups per server)
 	* [Font Awesome](http://fortawesome.github.com/Font-Awesome/) (1/2 teaspoon)
 	* [{{Mustaches}}](https://github.com/janl/mustache.js/) (1/3 lbs)
 

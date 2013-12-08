@@ -19,14 +19,14 @@ module.exports = function (grunt) {
 					asi: true
 				}
 			},
-			production: ['Gruntfile.js', './source/js/*.js'],
+			production: ['Gruntfile.js', './source/js/*.js', './source/js/locales/*.json'],
 		},
 		concat: {
 			options: {
 				separator: '\n;'
 			},
 			vendors: {
-				src: ['./source/js/libs/jquery.min.js', './source/js/libs/bootstrap-tooltip.js', './source/js/libs/bootstrap-popover.js', './source/js/libs/bootstrap-modal.js', './source/js/libs/mustache.js', './source/js/libs/date.js', './source/js/libs/gauge.js'],
+				src: ['./source/js/libs/jquery.min.js', './source/js/libs/bootstrap-tooltip.js', './source/js/libs/bootstrap-popover.js', './source/js/libs/bootstrap-modal.js', './source/js/libs/mustache.js', './source/js/libs/date.js', './source/js/libs/gauge.js', './source/js/libs/i18next-1.7.1.js'],
 				dest: './public/js/vendors.js'
 			},
 		},
@@ -70,7 +70,8 @@ module.exports = function (grunt) {
 		less: {
 			development: {
 				options: {
-					yuicompress: false
+					yuicompress: false,
+					dumpLineNumbers: "comments"
 				},
 				files: {
 					'./public/css/upscuits.css': './source/less/upscuits.less'
@@ -87,15 +88,28 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			js: {
-				files: ['./source/js/upscuits.js', './source/index.html'],
-				tasks: ['replace']
+				files: ['./source/js/upscuits.js', './source/js/locales/*.json', './source/index.html'],
+				tasks: ['replace', 'jshint', 'copy']
 			},
 			less: {
 				files: ['./source/less/*.less', './source/index.html'],
-				tasks: ['replace', 'less']
+				tasks: ['replace', 'less', 'copy']
 			}
 		},
-	});
+	
+		copy: {
+			translation: {
+				files: [{
+					expand: true,
+					cwd: './source/js/locales/',
+					src: ['**'],
+					dest: './public/js/locales',
+					filter: 'isFile'
+				}]
+			}
+		}
+	}
+);
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -103,7 +117,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-replace');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	// Default task(s).
 	grunt.registerTask('default', ['js', 'less']);

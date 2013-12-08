@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Upscuits | Uptime Biscuits</title>
+	<title data-i18n="head.title">Upscuits | Uptime Biscuits</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	<link href="css/upscuits.min.css?rel=@@version" rel="stylesheet">
@@ -12,9 +12,9 @@
 <body>
 	<div class="container">
 		<div class="jumbotron">
-			<h1><i class="icon-dashboard icon-red"></i> Upscuits <small>short for uptime-biscuit</small></h1>
+			<h1><i class="icon-dashboard icon-red"></i> Upscuits <small data-i18n="head.subtitle">short for uptime-biscuit</small></h1>
 
-			<p>
+			<p data-i18n="head.hero">
 				A quick overview of your server's uptime served on a nice dinner-tray.
 			</p>
 		</div>
@@ -31,19 +31,19 @@
 			<div class="col-md-8 col-md-offset-4">
 				<div class="well well-xs">
 					<div class="donut">
-						<div class="title">Last 24 hr</div>
+						<div class="title" data-i18n="times.Last 24 hr">Last 24 hr</div>
 					</div>
 					<div class="donut">
-						<div class="title">Last 7 days</div>
+						<div class="title" data-i18n="times.Last 7 days">Last 7 days</div>
 					</div>
 					<div class="donut">
-						<div class="title">Last 30 days</div>
+						<div class="title" data-i18n="times.Last 30 days">Last 30 days</div>
 					</div>
 					<div class="donut">
-						<div class="title">Last year</div>
+						<div class="title" data-i18n="times.Last year">Last year</div>
 					</div>
 					<div class="donut">
-						<div class="title">All time</div>
+						<div class="title"  data-i18n="times.All time">All time</div>
 					</div>
 				</div>
 			</div>
@@ -55,19 +55,19 @@
 			<div class="col-md-8 col-md-offset-4">
 				<div class="well well-xs">
 					<div class="donut">
-						<div class="title">Last 24 hr</div>
+						<div class="title" data-i18n="times.Last 24 hr">Last 24 hr</div>
 					</div>
 					<div class="donut">
-						<div class="title">Last 7 days</div>
+						<div class="title" data-i18n="times.Last 7 days">Last 7 days</div>
 					</div>
 					<div class="donut">
-						<div class="title">Last 30 days</div>
+						<div class="title" data-i18n="times.Last 30 days">Last 30 days</div>
 					</div>
 					<div class="donut">
-						<div class="title">Last year</div>
+						<div class="title" data-i18n="times.Last year">Last year</div>
 					</div>
 					<div class="donut">
-						<div class="title">All time</div>
+						<div class="title"  data-i18n="times.All time">All time</div>
 					</div>
 				</div>
 			</div>
@@ -86,33 +86,21 @@
 		<!-- modal windows-->
 		<div class="modal fade" id="modal-about">
 			<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title">What does this page mean?</h4>
-					</div>
-					<div class="modal-body">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" data-i18n="modal-about.title">What does this page mean?</h4>
+						</div>
+					<div class="modal-body" data-i18n="[html]modal-about.content">
 						<p>At this page you can see the status of different servers/ apps.</p>
 						<p>Each gauge shows the uptime of last day, week, month, year and all time. (These calculations are not very accurate...)</p>
 						<p>Click on the <i class="icon-time"></i>-icon to see the log of last month. Or open the monitored page by clicking on <i class="icon-link"></i></p>
 						<p>The page automatically refreshes</p>
 					</div>
 					<div class="modal-footer">
-						<a href="#" class="btn btn-primary" data-dismiss="modal">close</a>
+						<a href="#" class="btn btn-primary" data-dismiss="modal" data-i18n="close">close</a>
 					</div>
 				</div>
-			</div>
-		</div>
-
-		<div class="modal hide fade">
-			<div class="modal-header">
-				<a href="#" class="close" data-dismiss="modal">×</a>
-				<h3>What does this page mean?</h3>
-			</div>
-			<div class="modal-body">
-			</div>
-			<div class="modal-footer">
-				<a href="#" class="btn primary" data-dismiss="modal">close</a>
 			</div>
 		</div>
 
@@ -122,13 +110,21 @@
 				<div class="navbar-header">
 					<a class="navbar-brand" href="#"><i class="icon-dashboard icon-red"></i> Upscuits</a>
 				</div>
-				<div class="navbar-collapse collapse">
+				<div class="navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="#" data-toggle="modal" data-target="#modal-about"><i class="icon-info-sign"></i> About</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#modal-about"><i class="icon-info-sign"></i> <span data-i18n="nav.About">About</span></a></li>
 						<li><a href="http://twitter.com/pixelbak" target="_blank"><i class="icon-twitter"></i> Pixelbak</a></li>
-						<li><a href="https://github.com/digibart/upscuits" target="_blank"><i class="icon-code-fork"></i> Fork me</a></li>
-						<li><div class="navbar-text">Created by <a href="http://pixelbakkerij.nl" target="_blank" class="navbar-link"><i class="icon-user"></i> PixelBakkerij</a></div></li>
+						<li><a href="https://github.com/digibart/upscuits" target="_blank"><i class="icon-code-fork"></i> <span data-i18n="nav.Fork me">Fork me</span></a></li>
+						<li><div class="navbar-text"><span data-i18n="nav.Created by">Created by</span> <a href="http://pixelbakkerij.nl" target="_blank" class="navbar-link"><i class="icon-user"></i> PixelBakkerij</a></div></li>
 					</ul>
+
+					<ul class="nav navbar-nav navbar-tight navbar-nav-language">
+						<li><span class="navbar-text"><i class="icon-globe"></i>&nbsp;</span></li>
+						<li><a href="?lang=en">EN</a></li>
+						<li><a href="?lang=fr">FR</a></li>
+						<li><a href="?lang=nl">NL</a></li>
+					</ul>
+
 				</div>
 			</div>
 		</div>
@@ -145,8 +141,8 @@
 					</h2>
 	
 					<div class="btn-group">
-						<a href="javascript:void(0)" class="btn btn-default btn-sm log tip" title="Log of last month"><i class="icon-time"></i></a>
-						<a href="{{url}}" target="_blank" class="btn btn-default btn-sm tip" title="Open monitored page"><i class="icon-link"></i></a>
+						<a href="javascript:void(0)" class="btn btn-default btn-sm log tip" title="Log of last month" data-i18n="[title]Log of last month"><i class="icon-time"></i></a>
+						<a href="{{url}}" target="_blank" class="btn btn-default btn-sm tip" title="Open monitored page" data-i18n="[title]Open monitored page"><i class="icon-link"></i></a>
 					</div>
 					<div class="log{{id}} hide">
 						<ul class="list-unstyled">
@@ -175,8 +171,9 @@
 	
 	<!-- mustache template for no monitors found -->
 	<script type="template/mustache" id="no-monitors-template">
-		<div class="alert alert-error">
-			<span class="label label-important">Burned biscuits!</span> Seems like you forgot one ingredient: the Monitor API keys in <a href="js/config.js">js/config.js</a>.<br> Did you follow all the steps in the recipe? <a href="https://github.com/digibart/upscuits/blob/master/readme.md">readme</a>
+		<div class="alert alert-danger">
+			<strong data-i18n="no-api.Burned biscuits">Burned biscuits!</strong> <span data-i18n="no-api.content1">Seems like you forgot one ingredient: the Monitor API keys in</span> <a href="js/config.js">js/config.js</a>.<br> 
+			<span data-i18n="no-api.content2">Did you follow all the steps in the recipe?</span> <a href="https://github.com/digibart/upscuits/blob/master/readme.md" data-i18n="no-api.readme">readme</a>
 		</div>
 	
 	</script>
