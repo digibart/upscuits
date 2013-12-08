@@ -1,0 +1,39 @@
+{ 
+	"head": {
+		"title": "Upscuits | Uptime biscuits",
+		"subtitle": "afkorting voor uptime biscuits",
+		"hero": "Overzicht van server's uptime, geserveerd op een broodplankje"
+	},
+	"times": {
+		"Last 24 hr": "Laatste 24 uur",
+		"Last 7 days": "Laatste 7 dagen",
+		"Last 30 days": "Laatste 30 dagen",
+		"Last year": "Afgelopen jaar",
+		"All time": "Vanaf begin"
+	},
+	"close": "sluiten",
+	"Log of last month": "Log van laatste maand",
+	"Open monitored page": "Open de website",
+	"nav": {
+		"About": "Over deze pagina",
+		"Fork me": "Vork mij",
+		"Created by": "Gemaakt door"
+	},
+	"modal-about": {
+		"title": "Waar kijken we naar?",
+		"content": [
+			"<p>Op deze pagina kun je overzicht zien van de status van verschillende servers</p>",
+			"<p>Elke schijf toont de uptime van laatste dag, week, maand, jaar, en sinds begin. (Berekeningen zijn niet heel accuraat)</p>",
+			"<p>Klik op het <i class='icon-time'></i>-icoon om de log van laatste maand te bekijken. Of open de gemonitoorde pagina door op <i class='icon-link'></i>-icoon te klikken.</p>",
+			"<p>De pagina wordt automatisch iedere 5 minuten vernieuwd.</p>"
+		]
+	},
+	"no-api": {
+		"readme": "lees mij",
+		"Burned biscuits": "Aangebrande biscuits!",
+		"content1": [
+			"Lijkt erop dat er een ingredient ontbreekt: Uptime Robot API keys"
+		],
+		"content2": "Heb je alle stappen doorlopen uit het kookboek?"
+	}
+}
