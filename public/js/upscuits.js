@@ -16,7 +16,7 @@
 	--
 
 	@file		upsuits.js
-	@date		Sun Oct 06 2013 11:31:24
+	@date		Sun Dec 08 2013 20:48:39
 	@author		Pixel Bakkerij
 
 	Copyright (c) 2013 Pixel Bakkerij <http://pixelbakkerij.nl>
@@ -42,9 +42,28 @@ myApp.dashboard = (function($) {
 		$_prograss = $('.loading');
 		$_countdown = $('.countdown');
 		$_lastUpdate = $('#last-update');
+	
+		//translation
+		if (__language !== null) {
+			$('.navbar-nav-language').remove();
+		} else {
+			$.i18n.init({
+				lng: __language,
+				fallbackLng: false,
+				detectLngQS: 'lang',
+				resGetPath: 'js/locales/__lng__-__ns__.json' 
+			}, function(t) {
+				$('[data-i18n]').i18n();
+			});
+		}
 
 		if (typeof(__apiKeys) == "undefined" || __apiKeys.length < 1) {
-			$_container.append($(Mustache.render($('#no-monitors-template').html())));
+			var $output = $(Mustache.render($('#no-monitors-template').html()));
+
+			//translate
+			$output.find('[data-i18n]').i18n();
+
+			$_container.append($output);
 		}
 		else {
 			for (var i in __apiKeys) {
@@ -147,6 +166,11 @@ myApp.dashboard = (function($) {
 		
 		//initialize the graphs
 		placeCharts($output);
+
+		//translate
+		if (__language !== false) {
+			$output.find('[data-i18n]').i18n();
+		}
 
 		//attach popover listners
 		$output.find('a.log').click(function() {

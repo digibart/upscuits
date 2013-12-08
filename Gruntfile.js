@@ -70,8 +70,7 @@ module.exports = function (grunt) {
 		less: {
 			development: {
 				options: {
-					yuicompress: false,
-					dumpLineNumbers: "comments"
+					yuicompress: false
 				},
 				files: {
 					'./public/css/upscuits.css': './source/less/upscuits.less'
