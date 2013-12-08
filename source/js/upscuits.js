@@ -43,8 +43,10 @@ myApp.dashboard = (function($) {
 		$_countdown = $('.countdown');
 		$_lastUpdate = $('#last-update');
 	
-		//translation	
-		if (__language !== false) {
+		//translation
+		if (__language !== null) {
+			$('.navbar-nav-language').remove();
+		} else {
 			$.i18n.init({
 				lng: __language,
 				fallbackLng: false,
@@ -166,7 +168,9 @@ myApp.dashboard = (function($) {
 		placeCharts($output);
 
 		//translate
-		$output.find('[data-i18n]').i18n();
+		if (__language !== false) {
+			$output.find('[data-i18n]').i18n();
+		}
 
 		//attach popover listners
 		$output.find('a.log').click(function() {
