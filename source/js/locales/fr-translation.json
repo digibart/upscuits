@@ -13,28 +13,27 @@
 	},
 	"close": "fermer",
 	"Log of last month": "Logs du dernier mois",
-	"Open monitored page": "Ouvrir le site",
+	"Open monitored page": "Ouvrir la page",
 	"nav": {
 		"About": "A propos",
 		"Fork me": "Travailles avec moi",
 		"Created by": "Créé par"
 	},
 	"modal-about": {
-		"title": "Qu'est-ce que c'est que ça ?",
+		"title": "Qu'est-ce que cette page signifie ?",
 		"content": [
-			"<p>Dans cette page, vous pouvez visualiser le statut de votr(vos) serveur(s).</p>",
+			"<p>Dans cette page, vous pouvez visualiser le statut de votre(vos) serveur(s).</p>",
 			"<p>Chaque jauge représentent le temps des dernière 24h, derniers 7 jours, dernières 30 jours, dernière année et tout le temps.</p>",
 			"<p>Si vous cliquez sur <i class='icon-time'></i>-icône vous pouvez voir les logs du dernier mois. Ou ouvrir la page surveillée via le bouton <i class='icon-link'></i></p>",
 			"<p>La page s'actualise automatiquement.</p>",
-			"<p>Traductions par <a href='https://github.com/mimidevos' target='_blank'>Emilien</a> de frenche.</p>"
+			"<p>Traductions par <a href='https://github.com/mimidevos' target='_blank'>Emilien</a>.</p>"
 		]
 	},
 	"no-api": {
-		"readme": "lisez-les",
+		"readme": "Lisez-les",
 		"Burned biscuits": "Biscuits brûlés!",
 		"content1": [
-			"Une erreur s'est produite à cause d'un élément manquant : l'api du moniteur est accessible ici",
-			"Avez-vous suivit toutes les étapes ?"
+			"Une erreur s'est produite à cause d'un élément manquant : l'api du moniteur est accessible ici"
 		],
 		"content2": "Avez-vous suivit toutes les étapes ?"
 	}
