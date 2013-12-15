@@ -1,3 +1,4 @@
+_In french / en français : [readme-fr.md](http://github.com/mimidevos/upscuits/blob/develop/readme-fr.md)_
 Upscuits 
 ===============
 _Short for crispy uptime-biscuits_
