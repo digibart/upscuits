@@ -106,9 +106,20 @@ module.exports = function (grunt) {
 					filter: 'isFile'
 				}]
 			}
+		},
+
+		bump: {
+			options: {
+				commit: true,
+				commitMessage: 'Version bump to v%VERSION%',
+				createTag: true,
+				tagName: 'v%VERSION%',
+				tagMessage: 'Version %VERSION%',
+				push: false
+			}
 		}
 	}
-);
+	);
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -117,6 +128,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-bump');
 
 	// Default task(s).
 	grunt.registerTask('default', ['js', 'less']);
