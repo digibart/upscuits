@@ -23,7 +23,7 @@
 		"title": "Qu'est-ce que cette page signifie ?",
 		"content": [
 			"<p>Dans cette page, vous pouvez visualiser le statut de votre/vos serveur(s).</p>",
-			"<p>Chaque jauge représentent le temps des dernière 24h, derniers 7 jours, dernières 30 jours, dernière année et tout le temps.</p>",
+			"<p>Chaque jauge représentent le temps des dernières 24h, 7 derniers jours, 30 derniers jours, année dernière et tout le temps.</p>",
 			"<p>Si vous cliquez sur l'icône <i class='icon-time'></i>, vous pouvez voir les logs du dernier mois ou ouvrir la page à surveiller via le bouton <i class='icon-link'></i>.</p>",
 			"<p>La page s'actualise automatiquement.</p>",
 			"<p>Traductions par <a href='https://github.com/mimidevos' onclick='window.open(this.href); return false;'>Emilien</a>.</p>",
