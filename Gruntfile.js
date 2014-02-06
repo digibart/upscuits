@@ -131,7 +131,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-bump');
 
 	// Default task(s).
-	grunt.registerTask('default', ['js', 'less']);
+	grunt.registerTask('default', ['js', 'less', 'copy']);
 	grunt.registerTask('js', ['jshint', 'concat', 'replace', 'uglify']);
 
 };

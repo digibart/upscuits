@@ -1,0 +1,41 @@
+{ 
+	"head": {
+		"title": "Upscuits | Biscuits Mis à jour",
+		"subtitle": "Statut du serveur",
+		"hero": "Vérifier le statut de votre/vos serveur(s)."
+	},
+	"times": {
+		"Last 24 hr": "Dern. 24h",
+		"Last 7 days": "7 dern. jours",
+		"Last 30 days": "30 dern. jours",
+		"Last year": "Année dern.",
+		"All time": "Tout le temps"
+	},
+	"close": "fermer",
+	"Log of last month": "Logs du dernier mois",
+	"Open monitored page": "Ouvrir la page",
+	"nav": {
+		"About": "À propos",
+		"Fork me": "Travaille avec moi",
+		"Created by": "Créé par"
+	},
+	"modal-about": {
+		"title": "Qu'est-ce que cette page signifie ?",
+		"content": [
+			"<p>Dans cette page, vous pouvez visualiser le statut de votre/vos serveur(s).</p>",
+			"<p>Chaque jauge représente le temps des dernières 24h, 7 derniers jours, 30 derniers jours, année dernière et tout le temps.</p>",
+			"<p>Si vous cliquez sur l'icône <i class='icon-time'></i>, vous pouvez voir les logs du dernier mois ou ouvrir la page à surveiller via le bouton <i class='icon-link'></i>.</p>",
+			"<p>La page s'actualise automatiquement.</p>",
+			"<p>Traductions par <a href='https://github.com/mimidevos' onclick='window.open(this.href); return false;'>Emilien</a>.</p>",
+			"<p>Modifié par <a href='https://github.com/FleuryK' onclick='window.open(this.href); return false;'>FleuryK</a>.</p>"
+		]
+	},
+	"no-api": {
+		"readme": "Lisez-les",
+		"Burned biscuits": "Biscuits brûlés!",
+		"content1": [
+			"Une erreur s'est produite à cause d'un élément manquant : l'api du moniteur est accessible ici"
+		],
+		"content2": "Avez-vous suivit toutes les étapes ?"
+	}
+}
