@@ -2,31 +2,32 @@
 	"head": {
 		"title": "Upscuits | Biscuits Mis à jour",
 		"subtitle": "Statut du serveur",
-		"hero": "Vérifiez le statut de votre(vos) serveur(s)."
+		"hero": "Vérifier le statut de votre/vos serveur(s)."
 	},
 	"times": {
-		"Last 24 hr": "Dernière 24h",
-		"Last 7 days": "Derniers 7 jours",
-		"Last 30 days": "Dernières 30 jours",
-		"Last year": "Dernière année",
+		"Last 24 hr": "Dern. 24h",
+		"Last 7 days": "7 dern. jours",
+		"Last 30 days": "30 dern. jours",
+		"Last year": "Année dern.",
 		"All time": "Tout le temps"
 	},
 	"close": "fermer",
 	"Log of last month": "Logs du dernier mois",
 	"Open monitored page": "Ouvrir la page",
 	"nav": {
-		"About": "A propos",
-		"Fork me": "Travailles avec moi",
+		"About": "À propos",
+		"Fork me": "Travaille avec moi",
 		"Created by": "Créé par"
 	},
 	"modal-about": {
 		"title": "Qu'est-ce que cette page signifie ?",
 		"content": [
-			"<p>Dans cette page, vous pouvez visualiser le statut de votre(vos) serveur(s).</p>",
-			"<p>Chaque jauge représentent le temps des dernière 24h, derniers 7 jours, dernières 30 jours, dernière année et tout le temps.</p>",
-			"<p>Si vous cliquez sur <i class='icon-time'></i>-icône vous pouvez voir les logs du dernier mois. Ou ouvrir la page surveillée via le bouton <i class='icon-link'></i></p>",
+			"<p>Dans cette page, vous pouvez visualiser le statut de votre/vos serveur(s).</p>",
+			"<p>Chaque jauge représente le temps des dernières 24h, 7 derniers jours, 30 derniers jours, année dernière et tout le temps.</p>",
+			"<p>Si vous cliquez sur l'icône <i class='icon-time'></i>, vous pouvez voir les logs du dernier mois ou ouvrir la page à surveiller via le bouton <i class='icon-link'></i>.</p>",
 			"<p>La page s'actualise automatiquement.</p>",
-			"<p>Traductions par <a href='https://github.com/mimidevos' target='_blank'>Emilien</a>.</p>"
+			"<p>Traductions par <a href='https://github.com/mimidevos' onclick='window.open(this.href); return false;'>Emilien</a>.</p>",
+			"<p>Modifié par <a href='https://github.com/FleuryK' onclick='window.open(this.href); return false;'>FleuryK</a>.</p>"
 		]
 	},
 	"no-api": {
