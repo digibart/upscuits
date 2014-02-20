@@ -1,7 +1,7 @@
 { 
 	"head": {
-		"title": "Upscuits | Biscuits Mis à jour",
-		"subtitle": "Statut du serveur",
+		"title": "Upscuits | Biscuits mis à jour",
+		"subtitle": "Statut du ou des serveur(s)",
 		"hero": "Vérifier le statut de votre/vos serveur(s)."
 	},
 	"times": {
@@ -11,7 +11,7 @@
 		"Last year": "Année dern.",
 		"All time": "Tout le temps"
 	},
-	"close": "fermer",
+	"close": "Fermer",
 	"Log of last month": "Logs du dernier mois",
 	"Open monitored page": "Ouvrir la page",
 	"nav": {
@@ -26,16 +26,15 @@
 			"<p>Chaque jauge représente le temps des dernières 24h, 7 derniers jours, 30 derniers jours, année dernière et tout le temps.</p>",
 			"<p>Si vous cliquez sur l'icône <i class='icon-time'></i>, vous pouvez voir les logs du dernier mois ou ouvrir la page à surveiller via le bouton <i class='icon-link'></i>.</p>",
 			"<p>La page s'actualise automatiquement.</p>",
-			"<p>Traductions par <a href='https://github.com/mimidevos' onclick='window.open(this.href); return false;'>Emilien</a>.</p>",
-			"<p>Modifié par <a href='https://github.com/FleuryK' onclick='window.open(this.href); return false;'>FleuryK</a>.</p>"
+			"<p>Traduction par <a href='https://github.com/mimidevos' onclick='window.open(this.href); return false;'>Emilien</a> et modifié par <a href='https://github.com/FleuryK' onclick='window.open(this.href); return false;'>FleuryK</a>.</p>"
 		]
 	},
 	"no-api": {
-		"readme": "Lisez-les",
-		"Burned biscuits": "Biscuits brûlés!",
+		"readme": "Lisez-moi",
+		"Burned biscuits": "Biscuits brûlés !",
 		"content1": [
 			"Une erreur s'est produite à cause d'un élément manquant : l'api du moniteur est accessible ici"
 		],
-		"content2": "Avez-vous suivit toutes les étapes ?"
+		"content2": "Avez-vous suivi toutes les étapes ?"
 	}
 }
