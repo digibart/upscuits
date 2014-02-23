@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git://github.com/digibart/upscuits.git"
   },
+  "scripts": {
+    "test": "cd test && bower install && cd .. && grunt test"
+  },
   "author": "PixelBakkerij",
   "license": "GPL-v3",
   "bugs": {
