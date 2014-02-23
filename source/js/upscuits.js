@@ -44,7 +44,7 @@ myApp.dashboard = (function($) {
 		$_lastUpdate = $('#last-update');
 	
 		//translation
-		if (__language !== null) {
+		if (__language === false) {
 			$('.navbar-nav-language').remove();
 		} else {
 			$.i18n.init({

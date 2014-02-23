@@ -35,22 +35,6 @@ var uptimeMonitor = {
 			$('#server-container').html('');
 		});
 		
-		xit('should use default language if set', function(done) {
-			__language = 'nl';
-			myApp.dashboard.init();
-
-			var interval = setInterval(function() {
-				if ($('#server-container').html()) {
-					clearInterval(interval);
-
-					$('#server-container').html().match(176319).should.have.length(1);
-
-					done();
-				}
-			}, 100);
-		});
-
-
 		it('should not throw errors if set null', function(done) {
 			__language = null;
 			myApp.dashboard.init();
@@ -66,6 +50,20 @@ var uptimeMonitor = {
 			}, 100);
 		});
 
+		it('should use default language if set', function(done) {
+			__language = 'nl';
+			myApp.dashboard.init();
+
+			var interval = setInterval(function() {
+				if ($('#server-container').html()) {
+					clearInterval(interval);
+
+					$('#server-container').html().match(176319).should.have.length(1);
+
+					done();
+				}
+			}, 100);
+		});
 
 		it('should not throw errors if set false', function(done) {
 			__language = false;
@@ -88,7 +86,6 @@ var uptimeMonitor = {
 		beforeEach(function() {
 			__apiKeys = [];
 			myApp.dashboard.init();
-			console.log('foo');
 			$('#server-container').html('');
 		});
 
