@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "0.10"
+script: "npm test"
+before_script:
+  - "npm install -g grunt-cli --silent"
+  - "npm install -g bower --silent"
+  - "cd test && bower install && cd .."
