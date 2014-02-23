@@ -2,6 +2,8 @@ var __apiKeys = [
 	'm176319-d0f704bfbda0046a3ed0785c',
 ];
 
+var __language = null;
+
 /**
  * An example of response of a uptime monitor
  */
