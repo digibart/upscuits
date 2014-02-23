@@ -120,14 +120,32 @@ module.exports = function (grunt) {
 		},
 
 		connect: {
+			options: {
+				hostname: 'localhost'
+			},
 			dist: {
 				options: {
+					port: 8000,
 					base: 'public'
 				}
-			}
+			},
+			test: {
+				options: {
+					port: 8001,
+					base: ['test', 'public']
+				}
+			},
+		},
+
+		mocha: {
+			test: {
+				options: {
+					run: true,
+					urls: [ 'http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/test.html' ],
+				},
+			},
 		}
-	}
-	);
+	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -138,9 +156,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-bump');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-mocha');
 
 	// Default task(s).
 	grunt.registerTask('default', ['js', 'less', 'copy']);
 	grunt.registerTask('js', ['jshint', 'concat', 'replace', 'uglify']);
+	grunt.registerTask('test', ['connect:test', 'mocha']);
 
 };
