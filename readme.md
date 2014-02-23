@@ -1,10 +1,12 @@
 _In french / en français : [readme-fr.md](http://github.com/mimidevos/upscuits/blob/develop/readme-fr.md)_
+
 Upscuits 
 ===============
 _Short for crispy uptime-biscuits_
 
 With Upscuits you have a nice overview of the uptime of your servers, and a page to share with your customers.
 
+[![Build Status](https://travis-ci.org/digibart/upscuits.png?branch=master)](https://travis-ci.org/digibart/upscuits)
 
 Tools needed:
 ---------------
@@ -50,6 +52,27 @@ To serve the `public`-folder on [http://localhost:8000](http://localhost:8000) r
 To only compile the less files, use `grunt css`, or to concat javascript files use `grunt js`. To make a new release, run:
 
 `grunt`
+
+
+### Testing
+
+For testing we use Mocha - the fun, simple, flexible JavaScript test framework. Specs are written in `test/spec/test.js`
+
+Before runing tests, run [bower - A package manager for the web](http://bower.io) to install Mocha and his friends:
+
+	$ cd test
+	$ bower install
+
+Now you can run the tests with:
+
+`$ grunt test`
+
+To run the tests in a browser:
+
+`$ grunt connect:test:keepalive`
+
+
+
 
 
 
