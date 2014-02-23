@@ -287,7 +287,6 @@ myApp.dashboard = (function($) {
 		placeServer: placeServer
 	};
 }(jQuery));
-jQuery(document).ready(myApp.dashboard.init);
 
 /* function called from the uptimerequest */
 function jsonUptimeRobotApi(data) {
