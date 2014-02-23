@@ -117,6 +117,14 @@ module.exports = function (grunt) {
 				tagMessage: 'Version %VERSION%',
 				push: false
 			}
+		},
+
+		connect: {
+			dist: {
+				options: {
+					base: 'public'
+				}
+			}
 		}
 	}
 	);
@@ -129,6 +137,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-bump');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	// Default task(s).
 	grunt.registerTask('default', ['js', 'less', 'copy']);

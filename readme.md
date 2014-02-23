@@ -43,6 +43,10 @@ Now modify the code in the folder `source` as it pleases you. While editing you 
 
 `$ grunt watch`
 
+To serve the `public`-folder on [http://localhost:8000](http://localhost:8000) run:
+
+`$ grunt connect watch`
+
 To only compile the less files, use `grunt css`, or to concat javascript files use `grunt js`. To make a new release, run:
 
 `grunt`
