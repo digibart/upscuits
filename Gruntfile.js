@@ -161,6 +161,6 @@ module.exports = function (grunt) {
 	// Default task(s).
 	grunt.registerTask('default', ['js', 'less', 'copy']);
 	grunt.registerTask('js', ['jshint', 'concat', 'replace', 'uglify']);
-	grunt.registerTask('test', ['connect:test', 'mocha']);
+	grunt.registerTask('test', ['default', 'connect:test', 'mocha']);
 
 };
