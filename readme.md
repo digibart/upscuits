@@ -31,6 +31,46 @@ Directions:
 3. Paste one ore more API keys as an array in `config.js`
 
 
+### Deploying on Heroku:
+
+Install the [Heroku Toolbelt](https://toolbelt.heroku.com/) to start, then follow their 'Getting Started' instructions, including logging in:
+
+```
+$ heroku login
+Enter your Heroku credentials.
+Email: youremail@example.com
+Password (typing will be hidden): 
+Authentication successful.
+```
+
+Make sure you've created a git repository, and that your work is committed.
+
+Next, create a Heroku app:
+
+```
+$ heroku create myapp --buildpack https://github.com/heroku/heroku-buildpack-nodejs.git
+Creating myapp... done, stack is cedar
+BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-nodejs.git
+http://myapp.herokuapp.com/ | git@heroku.com:myapp.git
+```
+
+Now you're ready to deploy to Heroku:
+
+```
+$ git push heroku yourbranch:master
+```
+
+If you get an `permission denied`-error, run `$ heroku keys:add ~/.ssh/id_rsa.pub` to copy your ssh key to Heroku.
+
+If you make any changes to your hubot, just commit and push them as before:
+
+```
+$ git commit -am "Awesome crazy update"
+$ git push heroku master
+```
+
+
+
 Your own flavor:
 ---------------
 This project uses [Grunt](http://gruntjs.com/getting-started). You could edit the files in the `public` folder, but is advised to use Grunt to build the files in `public`-folder. Install Grunt with:
@@ -71,6 +111,9 @@ To run the tests in a browser:
 
 `$ grunt connect:test:keepalive`
 
+To just serve the `public` folder on [localhost:3000](http://localhost:3000/)
+
+`$ node app.js`
 
 
 
@@ -82,6 +125,7 @@ Ingredients:
 	* [Bootstrap](http://twitter.github.com/bootstrap/) (2 lbs)
 	* [UptimeRobot](http://www.uptimerobot.com) (6 oz.)
     * [i18n](i18next.com) (1 cup per language)
+    * [Express](http://expressjs.com) (just for your own flavor)
 * Topping:
 	* [Gauge.js](http://bernii.github.io/gauge.js/) (4 cups per server)
 	* [Font Awesome](http://fortawesome.github.com/Font-Awesome/) (1/2 teaspoon)
