@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git://github.com/digibart/upscuits.git"
   },
+  "engines": {
+    "node": "0.10.x"
+  },
   "scripts": {
     "test": "cd test && bower install && cd .. && grunt test"
   },
@@ -29,5 +32,8 @@
     "grunt-bump": "0.0.13",
     "grunt-contrib-connect": "~0.7.0",
     "grunt-mocha": "~0.4.10"
+  },
+  "dependencies": {
+    "express": "~4.4.2"
   }
 }
