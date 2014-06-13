@@ -16,7 +16,7 @@
 	--
 
 	@file		upsuits.js
-	@date		Thu Feb 06 2014 19:34:42
+	@date		Sun Feb 23 2014 17:04:35
 	@author		Pixel Bakkerij
 
 	Copyright (c) 2013 Pixel Bakkerij <http://pixelbakkerij.nl>
@@ -44,7 +44,7 @@ myApp.dashboard = (function($) {
 		$_lastUpdate = $('#last-update');
 	
 		//translation
-		if (__language !== null) {
+		if (__language === false) {
 			$('.navbar-nav-language').remove();
 		} else {
 			$.i18n.init({
@@ -287,7 +287,6 @@ myApp.dashboard = (function($) {
 		placeServer: placeServer
 	};
 }(jQuery));
-jQuery(document).ready(myApp.dashboard.init);
 
 /* function called from the uptimerequest */
 function jsonUptimeRobotApi(data) {

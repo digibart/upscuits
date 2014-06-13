@@ -112,6 +112,7 @@ module.exports = function (grunt) {
 			options: {
 				commit: true,
 				commitMessage: 'Version bump to v%VERSION%',
+				commitFiles: ['-a'],
 				createTag: true,
 				tagName: 'v%VERSION%',
 				tagMessage: 'Version %VERSION%',

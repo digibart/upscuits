@@ -91,7 +91,7 @@ myApp.dashboard = (function($) {
 	* this calls jsonUptimeRobotApi() when loaded  
 	*/
 	function getUptime(apikey) {
-		var url = "http://api.uptimerobot.com/getMonitors?apiKey=" + apikey + "&customUptimeRatio=1-7-30-365&format=json&logs=1";
+		var url = "//api.uptimerobot.com/getMonitors?apiKey=" + apikey + "&customUptimeRatio=1-7-30-365&format=json&logs=1";
 		$.ajax({
 			url: url,
 			context: document.body,
