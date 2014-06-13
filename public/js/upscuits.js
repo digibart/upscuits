@@ -16,7 +16,7 @@
 	--
 
 	@file		upsuits.js
-	@date		Sun Feb 23 2014 17:04:35
+	@date		Fri Jun 13 2014 23:10:47
 	@author		Pixel Bakkerij
 
 	Copyright (c) 2013 Pixel Bakkerij <http://pixelbakkerij.nl>
@@ -91,7 +91,7 @@ myApp.dashboard = (function($) {
 	* this calls jsonUptimeRobotApi() when loaded  
 	*/
 	function getUptime(apikey) {
-		var url = "http://api.uptimerobot.com/getMonitors?apiKey=" + apikey + "&customUptimeRatio=1-7-30-365&format=json&logs=1";
+		var url = "//api.uptimerobot.com/getMonitors?apiKey=" + apikey + "&customUptimeRatio=1-7-30-365&format=json&logs=1";
 		$.ajax({
 			url: url,
 			context: document.body,
