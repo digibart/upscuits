@@ -164,4 +164,6 @@ module.exports = function (grunt) {
 	grunt.registerTask('js', ['jshint', 'concat', 'replace', 'uglify']);
 	grunt.registerTask('test', ['default', 'connect:test', 'mocha']);
 
+	grunt.registerTask('heroku', ['js', 'less', 'copy']);
+
 };

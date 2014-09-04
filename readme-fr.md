@@ -34,19 +34,27 @@ Votre propre saveur:
 ---------------
 Ce projet utilise [Grunt](http://gruntjs.com/getting-started). Vous pouvez éditer les fichiers du dossier `public`, mais il est conseillé d'utiliser Grunt pour construire les fichiers du dossier `public`. Installez Grunt avec:
 
-`$ npm install -g grunt-cli`
+```
+$ npm install -g grunt-cli
+```
 
 Ensuite, installez les plugins grunt requis à partir de `packages.json` en exécutant :
 
-`$ npm install`
+```
+$ npm install
+```
 
 Maintenant modifiez le code du dossier `source` à votre guise. Lors de l'édition, vous pouvez l'utiliser pour construire chaque fois que vous enregistrez un fichier : 
 
-`$ grunt watch`
+```
+$ grunt watch
+```
 
 Pour compiler seulement les fichiers "less", utilisez `grunt css`, pour concaténer les fichiers javascript utilisez `grunt js`. Pour faire une nouvelle version, exécutez :
 
-`grunt`
+```
+grunt
+```
 
 
 

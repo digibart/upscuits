@@ -1,0 +1,18 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[{*.js,*.json}]
+indent_style = tab
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2

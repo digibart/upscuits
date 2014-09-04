@@ -26,32 +26,83 @@ _You can skip step 1 and 2 if you've already got a monitor at Uptime Robot_
 
 Directions:
 ---------------
-1. Clone or copy all files in `public` to your webserver/ shared hosting
+1. Clone or copy all files in `public` to your disk
 2. Copy `public/js/config.example.js` to `public/js/config.js`
 3. Paste one ore more API keys as an array in `config.js`
+4. Upload `public` to your webserver/ shared hosting, or host on Heroku as explained below:
+
+
+### Deploying on Heroku:
+
+Install the [Heroku Toolbelt](https://toolbelt.heroku.com/) to start, then follow their 'Getting Started' instructions, including logging in:
+
+```
+$ heroku login
+Enter your Heroku credentials.
+Email: youremail@example.com
+Password (typing will be hidden): 
+Authentication successful.
+```
+
+Make sure you've created a git repository, and that your work is committed.
+
+Next, create a Heroku app:
+
+```
+$ heroku create myapp --buildpack https://github.com/heroku/heroku-buildpack-nodejs.git
+Creating myapp... done, stack is cedar
+BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-nodejs.git
+http://myapp.herokuapp.com/ | git@heroku.com:myapp.git
+```
+
+Now you're ready to deploy to Heroku:
+
+```
+$ git push heroku yourbranch:master
+```
+
+If you get an `permission denied`-error, run `$ heroku keys:add ~/.ssh/id_rsa.pub` to copy your ssh key to Heroku.
+
+If you make any changes to your app, just commit and push them as before:
+
+```
+$ git commit -am "Awesome crazy update"
+$ git push heroku yourbranch:master
+```
+
 
 
 Your own flavor:
 ---------------
 This project uses [Grunt](http://gruntjs.com/getting-started). You could edit the files in the `public` folder, but is advised to use Grunt to build the files in `public`-folder. Install Grunt with:
 
-`$ npm install -g grunt-cli`
+```
+$ npm install -g grunt-cli
+```
 
 Next, install the required grunt plugins from `packages.json` by running:
 
-`$ npm install`
+```
+$ npm install
+```
 
 Now modify the code in the folder `source` as it pleases you. While editing you can use this to build everytime you save a file: 
 
-`$ grunt watch`
+```
+$ grunt watch
+```
 
 To serve the `public`-folder on [http://localhost:8000](http://localhost:8000) run:
 
-`$ grunt connect watch`
+```
+$ grunt connect watch
+```
 
 To only compile the less files, use `grunt css`, or to concat javascript files use `grunt js`. To make a new release, run:
 
-`grunt`
+```
+grunt
+```
 
 
 ### Testing
@@ -65,12 +116,21 @@ Before runing tests, run [bower - A package manager for the web](http://bower.io
 
 Now you can run the tests with:
 
-`$ grunt test`
+```
+$ grunt test
+```
 
 To run the tests in a browser:
 
-`$ grunt connect:test:keepalive`
+```
+$ grunt connect:test:keepalive
+```
 
+To just serve the `public` folder on [localhost:3000](http://localhost:3000/)
+
+```
+$ node app.js
+```
 
 
 
@@ -82,6 +142,7 @@ Ingredients:
 	* [Bootstrap](http://twitter.github.com/bootstrap/) (2 lbs)
 	* [UptimeRobot](http://www.uptimerobot.com) (6 oz.)
     * [i18n](i18next.com) (1 cup per language)
+    * [Express](http://expressjs.com) (just for your own flavor)
 * Topping:
 	* [Gauge.js](http://bernii.github.io/gauge.js/) (4 cups per server)
 	* [Font Awesome](http://fortawesome.github.com/Font-Awesome/) (1/2 teaspoon)

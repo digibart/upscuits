@@ -1,0 +1,39 @@
+{ 
+	"head": {
+		"title": "Upscuits | Uptime biscuits",
+		"subtitle": "uptime-biscuit的缩写",
+		"hero": "在“晚餐盘”上一览你服务器的可用性."
+	},
+	"times": {
+		"Last 24 hr": "过去24小时",
+		"Last 7 days": "过去一周",
+		"Last 30 days": "过去一个月",
+		"Last year": "过去一年",
+		"All time": "全部时间"
+	},
+	"close": "关闭",
+	"Log of last month": "过去一个月的记录",
+	"Open monitored page": "打开被监控的页面",
+	"nav": {
+		"About": "关于",
+		"Fork me": "Fork",
+		"Created by": "作者："
+	},
+	"modal-about": {
+		"title": "这个页面表示什么？",
+		"content": [
+			"<p>你可以在这个页面看到你的服务器或应用的可用性。</p>",
+			"<p>各个圆环分别表示过去一天、一周、一个月、一年以及所有时间的可用性。（计算可能不是非常准确……）</p>",
+			"<p>点击<i class='icon-time'></i>-按钮来查看过去一个月的监控详细记录。 点击<i class='icon-link'></i></p>来查看被监控的页面。",
+			"<p>这个页面会自动刷新。</p>"
+			]
+	},
+	"no-api": {
+		"readme": "自述",
+		"Burned biscuits": "饼干烤焦啦～",
+		"content1": [
+			"看样字你少加了份原料——这个网站的监控API Key："
+		],
+		"content2": "请确认按照步骤完成配置"
+	}
+}
