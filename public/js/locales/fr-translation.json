@@ -26,7 +26,7 @@
 			"<p>Chaque jauge représente le temps des dernières 24h, 7 derniers jours, 30 derniers jours, année dernière et tout le temps.</p>",
 			"<p>Si vous cliquez sur l'icône <i class='icon-time'></i>, vous pouvez voir les logs du dernier mois ou ouvrir la page à surveiller via le bouton <i class='icon-link'></i>.</p>",
 			"<p>La page s'actualise automatiquement.</p>",
-			"<p>Traduction par <a href='https://github.com/mimidevos' onclick='window.open(this.href); return false;'>Emilien</a> et modifié par <a href='https://github.com/FleuryK' onclick='window.open(this.href); return false;'>FleuryK</a>.</p>"
+			"<p>Traduction par <a href='https://github.com/unixfox' onclick='window.open(this.href); return false;'>Emilien</a> et modifié par <a href='https://github.com/FleuryK' onclick='window.open(this.href); return false;'>FleuryK</a>.</p>"
 		]
 	},
 	"no-api": {
