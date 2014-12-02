@@ -123,12 +123,13 @@ myApp.dashboard = (function($) {
 				data.statustxt = "Seems offline";
 				data.statusicon = "icon-remove";
 				data.label = "warning";
+				data.alert = "alert alert-warning";
 				break;
 			case 9:
 				data.statustxt = "Offline";
 				data.statusicon = "icon-bolt";
 				data.label = "danger";
-				data.alert = "alert alert-error";
+				data.alert = "alert alert-danger";
 				break;
 		}
 
