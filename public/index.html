@@ -6,7 +6,7 @@
 	<title data-i18n="head.title">Upscuits | Uptime Biscuits</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-	<link href="css/upscuits.min.css?rel=1.4.1" rel="stylesheet">
+	<link href="css/upscuits.min.css?rel=1.4.3" rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
 				A quick overview of your server's uptime served on a nice dinner-tray.
 			</p>
 		</div>
-		
+
 		<!-- progress bar of loaded servers -->
 		<div class="progress">
 			<div class="progress-bar progress-bar-info loading bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
@@ -124,13 +124,14 @@
 						<li><a href="?lang=fr">FR</a></li>
 						<li><a href="?lang=nl">NL</a></li>
 						<li><a href="?lang=zh">ZH</a></li>
+						<li><a href="?lang=el">GR</a></li>
 					</ul>
 
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- mustache template for server row -->
 	<script type="template/mustache" id="server-template">
 		<div class="well {{alert}}">
@@ -140,7 +141,7 @@
 						{{friendlyname}}
 						<span class="label label-status label-{{label}}"><i class="{{statusicon}}"></i></span>
 					</h2>
-	
+
 					<div class="btn-group">
 						<a href="javascript:void(0)" class="btn btn-default btn-sm log tip" title="Log of last month" data-i18n="[title]Log of last month"><i class="icon-time"></i></a>
 						<a href="{{url}}" target="_blank" class="btn btn-default btn-sm tip" title="Open monitored page" data-i18n="[title]Open monitored page"><i class="icon-link"></i></a>
@@ -169,20 +170,20 @@
 			</div>
 		</div>
 	</script>
-	
+
 	<!-- mustache template for no monitors found -->
 	<script type="template/mustache" id="no-monitors-template">
 		<div class="alert alert-danger">
-			<strong data-i18n="no-api.Burned biscuits">Burned biscuits!</strong> <span data-i18n="no-api.content1">Seems like you forgot one ingredient: the Monitor API keys in</span> <a href="js/config.js">js/config.js</a>.<br> 
+			<strong data-i18n="no-api.Burned biscuits">Burned biscuits!</strong> <span data-i18n="no-api.content1">Seems like you forgot one ingredient: the Monitor API keys in</span> <a href="js/config.js">js/config.js</a>.<br>
 			<span data-i18n="no-api.content2">Did you follow all the steps in the recipe?</span> <a href="https://github.com/digibart/upscuits/blob/master/readme.md" data-i18n="no-api.readme">readme</a>
 		</div>
-	
+
 	</script>
 
 
-	<script src="js/vendors.min.js?rel=1.4.1" type="text/javascript"></script>
-	<script src="js/config.js?rel=1.4.1" type="text/javascript"></script>
-	<script src="js/upscuits.js?rel=1.4.1" type="text/javascript"></script>
+	<script src="js/vendors.min.js?rel=1.4.3" type="text/javascript"></script>
+	<script src="js/config.js?rel=1.4.3" type="text/javascript"></script>
+	<script src="js/upscuits.js?rel=1.4.3" type="text/javascript"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(myApp.dashboard.init);
 	</script>

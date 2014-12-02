@@ -1,4 +1,4 @@
-{ 
+{
 	"head": {
 		"title": "Upscuits | Uptime biscuits",
 		"subtitle": "short for uptime-biscuit",
@@ -23,9 +23,9 @@
 		"title": "What does this page mean?",
 		"content": [
 			"<p>At this page you can see the status of different servers/ apps.</p>",
-			"<p>Each gauge shows the uptime of last day, week, month, year and all time. (These calculations are not very accurate...)</p>",
-			"<p>Click on the <i class='icon-time'></i>-icon to see the log of last month. Or open the monitored page by clicking on <i class='icon-link'></i></p>",
-			"<p>The page automatically refreshes</p>"
+			"<p>Each gauge shows the uptime of last day, week, month, year and all time (these calculations are not very accurate...).</p>",
+			"<p>Click on the <i class='icon-time'></i>-icon to see the log of last month or open the monitored page by clicking on <i class='icon-link'></i>.</p>",
+			"<p>The page refreshes automatically.</p>"
 			]
 	},
 	"no-api": {

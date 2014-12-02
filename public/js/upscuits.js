@@ -16,7 +16,7 @@
 	--
 
 	@file		upsuits.js
-	@date		Thu Sep 04 2014 21:27:29
+	@date		Tue Dec 02 2014 21:30:27
 	@author		Pixel Bakkerij
 
 	Copyright (c) 2013 Pixel Bakkerij <http://pixelbakkerij.nl>
@@ -123,12 +123,13 @@ myApp.dashboard = (function($) {
 				data.statustxt = "Seems offline";
 				data.statusicon = "icon-remove";
 				data.label = "warning";
+				data.alert = "alert alert-warning";
 				break;
 			case 9:
 				data.statustxt = "Offline";
 				data.statusicon = "icon-bolt";
 				data.label = "danger";
-				data.alert = "alert alert-error";
+				data.alert = "alert alert-danger";
 				break;
 		}
 
