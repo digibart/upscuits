@@ -80,10 +80,11 @@ This project uses [Grunt](http://gruntjs.com/getting-started). You could edit th
 $ npm install -g grunt-cli
 ```
 
-Next, install the required grunt plugins from `packages.json` by running:
+Next, install the required grunt plugins from `packages.json` and `bower.json` by running:
 
 ```
 $ npm install
+$ bower install
 ```
 
 Now modify the code in the folder `source` as it pleases you. While editing you can use this to build everytime you save a file: 

@@ -5,4 +5,5 @@ script: "npm test"
 before_script:
   - "npm install -g grunt-cli --silent"
   - "npm install -g bower --silent"
+  - bower install
   - "cd test && bower install && cd .."

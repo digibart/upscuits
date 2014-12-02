@@ -1,0 +1,21 @@
+{
+  "name": "upscuits",
+  "homepage": "https://github.com/digibart/upscuits",
+  "license": "GPL-v3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.1",
+    "jquery": "~2.1.1",
+    "mustache": "~0.8.2",
+    "datejs": "~1.0.0-rc1",
+    "gauge.js": "~1.2.1",
+    "i18next": "~1.7.5"
+  }
+}

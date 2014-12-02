@@ -26,7 +26,16 @@ module.exports = function (grunt) {
 				separator: '\n;'
 			},
 			vendors: {
-				src: ['./source/js/libs/jquery.min.js', './source/js/libs/bootstrap-tooltip.js', './source/js/libs/bootstrap-popover.js', './source/js/libs/bootstrap-modal.js', './source/js/libs/mustache.js', './source/js/libs/date.js', './source/js/libs/gauge.js', './source/js/libs/i18next-1.7.1.js'],
+				src: [
+					'./bower_components/jquery/dist/jquery.js',
+					'./bower_components/bootstrap/js/tooltip.js',
+					'./bower_components/bootstrap/js/popover.js',
+					'./bower_components/bootstrap/js/modal.js',
+					'./bower_components/mustache/mustache.js',
+					'./bower_components/datejs/build/production/date.min.js',
+					'./bower_components/gauge.js/dist/gauge.js',
+					'./bower_components/i18next/i18next.js'
+				],
 				dest: './public/js/vendors.js'
 			},
 		},
@@ -95,7 +104,7 @@ module.exports = function (grunt) {
 				tasks: ['replace', 'less', 'copy']
 			}
 		},
-	
+
 		copy: {
 			translation: {
 				files: [{
