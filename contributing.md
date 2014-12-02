@@ -7,7 +7,7 @@ We love pull requests. Here's a quick guide:
 2. Create a feature/hotfix branch
 3. Edit and commit the files in `./source/` folder.
 4. Make sure `grunt` succeeds
-5. Push to your fork and submit a pull request.
+5. Push to your fork and submit a pull request into the `develop` branch
 
 Upscuits only uses static files, to be compatible with a variety of servers 
 (IIS, Apache, Ngix, NodeJS, ...). We prefer to keep server-side languages 
