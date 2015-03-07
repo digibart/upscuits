@@ -1,4 +1,4 @@
-_In french / en français : [readme-fr.md](http://github.com/mimidevos/upscuits/blob/develop/readme-fr.md)_
+_In french / en français : [readme-fr.md](https://github.com/digibart/upscuits/blob/master/readme-fr.md)_
 
 Upscuits 
 ===============
