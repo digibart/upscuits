@@ -34,8 +34,10 @@ var uptimeMonitor = {
 		before(function() {
 			$('#server-container').html('');
 		});
-		
+
 		it('should not throw errors if set null', function(done) {
+			this.timeout(5000);
+
 			__language = null;
 			myApp.dashboard.init();
 
@@ -51,6 +53,8 @@ var uptimeMonitor = {
 		});
 
 		it('should use default language if set', function(done) {
+			this.timeout(5000);
+
 			__language = 'nl';
 			myApp.dashboard.init();
 
@@ -66,6 +70,8 @@ var uptimeMonitor = {
 		});
 
 		it('should not throw errors if set false', function(done) {
+			this.timeout(5000);
+
 			__language = false;
 			myApp.dashboard.init();
 
