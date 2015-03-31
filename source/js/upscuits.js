@@ -137,7 +137,7 @@ myApp.dashboard = (function($) {
 		var lastMonth = Date.parse('-1month');
 		for (var i in data.log) {
 			var log = data.log[i],
-				dateTime = Date.parse(log.datetime + " GMT+0300");
+				dateTime = Date.parse(log.datetime);
 
 			if (dateTime < lastMonth) {
 				data.log.splice(i, i + 1);
