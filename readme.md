@@ -139,7 +139,7 @@ $ node app.js
 Ingredients:
 ---------------
 * Cake:
-	* [Bootstrap](http://twitter.github.com/bootstrap/) (2 lbs)
+	* [Bootstrap](http://getbootstrap.com) (2 lbs)
 	* [UptimeRobot](http://www.uptimerobot.com) (6 oz.)
     * [i18n](i18next.com) (1 cup per language)
     * [Express](http://expressjs.com) (just for your own flavor)
