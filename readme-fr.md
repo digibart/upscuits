@@ -61,7 +61,7 @@ grunt
 Ingredients:
 ---------------
 * Gâteau:
-	* [Bootstrap](http://twitter.github.com/bootstrap/) (2 lbs)
+	* [Bootstrap](http://getbootstrap.com) (2 lbs)
 	* [UptimeRobot](http://www.uptimerobot.com) (6 oz.)
 * Garniture:
 	* [Google Charts](https://developers.google.com/chart) (4 cups/server)
