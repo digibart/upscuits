@@ -16,7 +16,7 @@
 	--
 
 	@file		upsuits.js
-	@date		Tue Mar 31 2015 21:05:54
+	@date		Tue Jun 02 2015 19:39:54
 	@author		Pixel Bakkerij
 
 	Copyright (c) 2013 Pixel Bakkerij <http://pixelbakkerij.nl>
@@ -193,7 +193,7 @@ myApp.dashboard = (function($) {
 	function placeCharts($container) {
 		var options = {
 			lines: 12,
-			angle: 0.42,
+			angle: 0.40,
 			lineWidth: 0.2,
 			limitMax: 'false',
 			colorStart: '#4DAD48',
