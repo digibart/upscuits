@@ -144,7 +144,9 @@
 
 					<div class="btn-group">
 						<a href="javascript:void(0)" class="btn btn-default btn-sm log tip" title="Log of last month" data-i18n="[title]Log of last month"><i class="icon-time"></i></a>
-						<a href="{{url}}" target="_blank" class="btn btn-default btn-sm tip" title="Open monitored page" data-i18n="[title]Open monitored page"><i class="icon-link"></i></a>
+						{{#showLink}}
+							<a href="{{url}}" target="_blank" class="btn btn-default btn-sm tip" title="Open monitored page" data-i18n="[title]Open monitored page"><i class="icon-link"></i></a>
+						{{/showLink}}
 					</div>
 					<div class="log{{id}} hide">
 						<ul class="list-unstyled">

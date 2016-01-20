@@ -16,7 +16,7 @@
 	--
 
 	@file		upsuits.js
-	@date		Wed Jan 20 2016 20:47:47
+	@date		Wed Jan 20 2016 21:05:10
 	@author		Pixel Bakkerij
 
 	Copyright (c) 2013 Pixel Bakkerij <http://pixelbakkerij.nl>
@@ -161,6 +161,10 @@ myApp.dashboard = (function($) {
 			{title: 'Last year', uptime: parseFloat(uptimes[3])},
 			{title: 'All Time',  uptime: parseFloat(uptimes[4])}
 		];
+
+		// show a link for HTTP and keyword
+		var monitorType = parseInt(data.type, 10);
+		data.showLink = (monitorType <= 2);
 
 		//render the sh!t
 		var $output = $(Mustache.render(_template, data));

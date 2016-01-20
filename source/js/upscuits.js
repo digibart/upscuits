@@ -162,6 +162,10 @@ myApp.dashboard = (function($) {
 			{title: 'All Time',  uptime: parseFloat(uptimes[4])}
 		];
 
+		// show a link for HTTP and keyword
+		var monitorType = parseInt(data.type, 10);
+		data.showLink = (monitorType <= 2);
+
 		//render the sh!t
 		var $output = $(Mustache.render(_template, data));
 		
